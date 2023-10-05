@@ -1,4 +1,4 @@
 #!/usr/bin/env python3
 
-def add():
+def add(a: float, b: float):
   pass
