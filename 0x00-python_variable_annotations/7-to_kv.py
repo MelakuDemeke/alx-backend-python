@@ -4,4 +4,4 @@ from typing import Union, Tuple
 
 def to_kv(k: str,v: Union[int, float]) -> Tuple:
     '''return tuple of string and square of int or float'''
-    pass
+    return(k, v**2)
