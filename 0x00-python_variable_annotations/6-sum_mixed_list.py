@@ -2,6 +2,7 @@
 '''return sum of mixed list of floats and ints'''
 from typing import List
 
+
 def sum_mixed_list(mxd_lst: List[int | float]) -> float:
     """ Return sum of list of floats """
     if mxd_lst is None:
