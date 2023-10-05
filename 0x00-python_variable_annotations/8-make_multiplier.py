@@ -2,4 +2,5 @@
 from typing import Callable
 
 def make_multiplier(multiplier: float) -> Callable:
-    pass
+    def mul(n: float) -> float:
+        return n * multiplier
