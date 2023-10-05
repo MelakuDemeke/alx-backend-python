@@ -3,4 +3,8 @@
 from typing import List
 
 def sum_mixed_list(mxd_lst: List[int | float]) -> float:
-    pass
+    """ Return sum of list of floats """
+    if mxd_lst is None:
+        return 0
+    else:
+        return sum(mxd_lst)
