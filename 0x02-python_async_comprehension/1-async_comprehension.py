@@ -6,6 +6,7 @@ and defines an asynchronous comprehension to collect its values.
 import asyncio
 asyngen = __import__('0-async_generator').async_generator
 
+
 async def async_comprehension():
     '''
     Asynchronous comprehension to collect values from an async generator.
