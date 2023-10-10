@@ -5,9 +5,10 @@ between 0 and 10 with a 1-second delay between each yield.
 '''
 import asyncio
 import random
+from typing import Generator
 
 
-async def async_generator():
+async def async_generator() -> Generator[float, None, None] :
     '''
     Asynchronous generator that yields random numbers with a delay.
 
