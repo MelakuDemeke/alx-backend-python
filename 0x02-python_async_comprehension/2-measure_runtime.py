@@ -3,6 +3,7 @@
 This script measures the total execution time of running the
 async_comprehension() function concurrently four times.
 '''
+import time
 import asyncio
 asynccomp = __import__('1-async_comprehension').async_comprehension
 
