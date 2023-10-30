@@ -6,6 +6,7 @@ from typing import Dict
 from parameterized import parameterized, parameterized_class
 from unittest.mock import MagicMock, Mock, PropertyMock, patch
 from client import GithubOrgClient
+from fixtures import TEST_PAYLOAD
 
 
 class TestGithubOrgClient(unittest.TestCase):
@@ -100,4 +101,3 @@ class TestGithubOrgClient(unittest.TestCase):
                 },
             ]
         }
-        
