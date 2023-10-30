@@ -11,8 +11,7 @@ import unittest
 from parameterized import parameterized
 from utils import access_nested_map
 
-
-def access_nested_map(nested_map, path):
+class TestAccessNestedMap(unittest.TestCase):
     """
     Accesses a nested value in a dictionary using a sequence of keys.
 
@@ -22,11 +21,23 @@ def access_nested_map(nested_map, path):
 
     Returns:
         The value at the end of the path.
-
-    Raises:
-        KeyError: If any key in the path is not found in the dictionary.
-        TypeError: If the argument is not a dictionary or the path is not a tuple.
     """
+    @parameterized.expand([
+        ({"a": 1}, ("a",), 1),
+        ({"a": {"b": 2}}, ("a",), {"b": 2}),
+        ({"a": {"b": 2}}, ("a", "b"), 2),
+    ])
+    def test_access_nested_map(self, nested_map, path, expected):
+        """
+        Test function to check if the access_nested_map function returns the expected value.
 
-    pass
+        Args:
+        - nested_map: A dictionary representing a nested map.
+        - path: A list of keys representing the path to a value in the nested map.
+        - expected: The expected value at the end of the path.
+
+        Returns:
+        - None
+        """
+        self.assertEqual(access_nested_map(nested_map, path), expected)
 
