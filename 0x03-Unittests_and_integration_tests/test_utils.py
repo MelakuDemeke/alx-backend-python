@@ -61,3 +61,6 @@ class TestAccessNestedMap(unittest.TestCase):
         """
         with self.assertRaises(exception):
             access_nested_map(nested_map, path)
+
+class TestGetJson(unittest.TestCase):
+    pass
