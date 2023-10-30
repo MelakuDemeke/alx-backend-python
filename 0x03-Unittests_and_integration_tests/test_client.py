@@ -4,7 +4,7 @@
 import unittest
 from typing import Dict
 from parameterized import parameterized
-from unittest.mock import MagicMock, patch
+from unittest.mock import MagicMock, patch, PropertyMock
 
 from client import GithubOrgClient
 
