@@ -1,12 +1,16 @@
-"""Module for testing the Client class."""
-
+#!/usr/bin/env python3
+"""A module for testing the client module.
+"""
 import unittest
 from typing import Dict
-from unittest.mock import patch, MagicMock
 from parameterized import parameterized
+from unittest.mock import MagicMock, patch
+
+from client import GithubOrgClient
 
 
 class TestGithubOrgClient(unittest.TestCase):
+    """Tests the GithubOrgClient class."""
     @parameterized.expand([
         ("google", {'login': "google"}),
         ("abc", {'login': "abc"}),
@@ -15,17 +19,7 @@ class TestGithubOrgClient(unittest.TestCase):
         "client.get_json",
     )
     def test_org(self, org: str, resp: Dict, mocked_fxn: MagicMock) -> None:
-        """
-        Test the GithubOrgClient.org method.
-
-        Args:
-            org (str): The name of the organization to test.
-            resp (Dict): The expected response from the mocked function.
-            mocked_fxn (MagicMock): The mocked function to use.
-
-        Returns:
-            None
-        """
+        """Test the GithubOrgClient.org method."""
         mocked_fxn.return_value = MagicMock(return_value=resp)
         gh_org_client = GithubOrgClient(org)
         self.assertEqual(gh_org_client.org(), resp)
