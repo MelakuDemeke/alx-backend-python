@@ -160,3 +160,6 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
             if url in route_payload:
                 return Mock(**{'json.return_value': route_payload[url]})
             return HTTPError
+
+        cls.get_patcher = patch("requests.get", side_effect=get_payload)
+        cls.get_patcher.start()
