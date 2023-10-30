@@ -156,6 +156,7 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
             'https://api.github.com/orgs/google': cls.org_payload,
             'https://api.github.com/orgs/google/repos': cls.repos_payload,
         }
+
         def get_payload(url):
             if url in route_payload:
                 return Mock(**{'json.return_value': route_payload[url]})
@@ -165,23 +166,23 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
         cls.get_patcher.start()
 
     def test_public_repos(self) -> None:
-            """
-            check if the public_repos method of GithubOrgClient class
-            returns the expected number of public repositories
-            for a given organization.
-            """
-            self.assertEqual(
-                GithubOrgClient("google").public_repos(),
-                self.expected_repos,
-            )
+        """
+        check if the public_repos method of GithubOrgClient class
+        returns the expected number of public repositories
+        for a given organization.
+        """
+        self.assertEqual(
+            GithubOrgClient("google").public_repos(),
+            self.expected_repos,
+        )
 
     def test_public_repos_with_license(self) -> None:
-            """
-            Test that the public_repos method of the GithubOrgClient
-            class returns the expected list of repositories
-            with the specified license for a given organization.
-            """
-            self.assertEqual(
-                GithubOrgClient("google").public_repos(license="apache-2.0"),
-                self.apache2_repos,
-            )
+        """
+        Test that the public_repos method of the GithubOrgClient
+        class returns the expected list of repositories
+        with the specified license for a given organization.
+        """
+        self.assertEqual(
+            GithubOrgClient("google").public_repos(license="apache-2.0"),
+            self.apache2_repos,
+        )
