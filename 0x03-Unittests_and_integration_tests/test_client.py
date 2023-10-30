@@ -163,3 +163,14 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
 
         cls.get_patcher = patch("requests.get", side_effect=get_payload)
         cls.get_patcher.start()
+
+    def test_public_repos(self) -> None:
+            """
+            check if the public_repos method of GithubOrgClient class
+            returns the expected number of public repositories
+            for a given organization.
+            """
+            self.assertEqual(
+                GithubOrgClient("google").public_repos(),
+                self.expected_repos,
+            )
