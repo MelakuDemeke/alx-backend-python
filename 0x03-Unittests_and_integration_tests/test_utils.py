@@ -7,4 +7,8 @@ the project.These tests ensure that the functions in the utils module behave
 as expected and do not introduce any regressions.
 """
 
+import unittest
+
+class TestAccessNestedMap(unittest.TestCase):
+    pass
 
