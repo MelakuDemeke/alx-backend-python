@@ -150,4 +150,8 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
     """integration test for GithubOrgClient class"""
     @classmethod
     def setUpClass(cls) -> None:
-        pass
+        """Sets up class fixtures"""
+        route_payload = {
+            'https://api.github.com/orgs/google': cls.org_payload,
+            'https://api.github.com/orgs/google/repos': cls.repos_payload,
+        }
