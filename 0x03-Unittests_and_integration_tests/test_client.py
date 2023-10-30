@@ -174,3 +174,14 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
                 GithubOrgClient("google").public_repos(),
                 self.expected_repos,
             )
+
+    def test_public_repos_with_license(self) -> None:
+            """
+            Test that the public_repos method of the GithubOrgClient
+            class returns the expected list of repositories
+            with the specified license for a given organization.
+            """
+            self.assertEqual(
+                GithubOrgClient("google").public_repos(license="apache-2.0"),
+                self.apache2_repos,
+            )
