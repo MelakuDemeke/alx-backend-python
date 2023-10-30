@@ -94,4 +94,9 @@ class TestGetJson(unittest.TestCase):
 
 
 class TestMemoize(unittest.TestCase):
-    pass
+    def test_memoize(self):
+        class TestClass:
+            def a_method(self):
+                return 42
+
+            
