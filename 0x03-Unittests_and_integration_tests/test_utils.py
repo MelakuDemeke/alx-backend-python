@@ -11,6 +11,7 @@ import unittest
 from parameterized import parameterized
 from utils import access_nested_map
 
+
 class TestAccessNestedMap(unittest.TestCase):
     """
     Accesses a nested value in a dictionary using a sequence of keys.
@@ -29,15 +30,15 @@ class TestAccessNestedMap(unittest.TestCase):
     ])
     def test_access_nested_map(self, nested_map, path, expected):
         """
-        Test function to check if the access_nested_map function returns the expected value.
+        Test function to check if the access_nested_map function returns
+        the expected value.
 
         Args:
         - nested_map: A dictionary representing a nested map.
-        - path: A list of keys representing the path to a value in the nested map.
+        - path: A list of keys representing the path to a value
         - expected: The expected value at the end of the path.
 
         Returns:
         - None
         """
         self.assertEqual(access_nested_map(nested_map, path), expected)
-
