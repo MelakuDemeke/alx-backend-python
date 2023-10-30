@@ -3,9 +3,8 @@
 """
 import unittest
 from typing import Dict
-from parameterized import parameterized
-from unittest.mock import MagicMock, patch, PropertyMock
-
+from parameterized import parameterized, parameterized_class
+from unittest.mock import MagicMock, Mock, PropertyMock, patch
 from client import GithubOrgClient
 
 
