@@ -15,10 +15,20 @@ class TestGithubOrgClient(unittest.TestCase):
         "client.get_json",
     )
     def test_org(self, org: str, resp: Dict, mocked_fxn: MagicMock) -> None:
+        """
+        Test the GithubOrgClient.org method.
+
+        Args:
+            org (str): The name of the organization to test.
+            resp (Dict): The expected response from the mocked function.
+            mocked_fxn (MagicMock): The mocked function to use.
+
+        Returns:
+            None
+        """
         mocked_fxn.return_value = MagicMock(return_value=resp)
         gh_org_client = GithubOrgClient(org)
         self.assertEqual(gh_org_client.org(), resp)
         mocked_fxn.assert_called_once_with(
             "https://api.github.com/orgs/{}".format(org)
         )
-
